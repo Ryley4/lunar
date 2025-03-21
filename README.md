@@ -36,19 +36,19 @@ python3 main.py
 
 | Command         | Description                               |
 |----------------|-------------------------------------------|
-| `/ping`         | Check if the bot is online               |
+| `/ping`         | Check if Lunar is online                 |
 | `/kick`         | Kick a user                              |
 | `/ban`          | Ban a user                               |
 | `/unban`        | Unban a previously banned user           |
 | `/mute`         | Add a mute role to a user                |
 | `/unmute`       | Remove mute role                         |
 | `/clear`        | Bulk delete messages                     |
-| `/uptime`       | Show how long the bot has been running   |
+| `/uptime`       | Show how long Lunar has been running     |
 | `/relay`        | Say something as the bot                 |
 | `/filteradd`    | Add a word to the bad word list          |
 | `/filterdel`    | Remove a word from the bad word list     |
 | `/filterlist`   | View all filtered words                  |
-| `/info`         | Display bot info                         |
+| `/info`         | Display Lunar's info                     |
 | `/lock`         | Lock a text channel                      |
 | `/unlock`       | Unlock a text channel                    |
 | `/emoteurl`     | Get the URL of a custom emoji            |
