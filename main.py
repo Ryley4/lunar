@@ -106,17 +106,17 @@ async def on_member_remove(member):
     channel = bot.get_channel(00000000000) # <insert channel ID here>
     await channel.edit(name = f'Member Count: {guild.member_count}')
 
-# Chat filter event
+# Chat filter event.
 @bot.event 
 async def on_message(message):
-    
+    # Ensure we do not process messages sent by the bot itself
     if message.author.bot:
         return
-
-    for badword in file:
-        if re.search(rf'\b{re.escape(badword)}\b', message.content, re.I):
+        
+    for filterList in file:
+        if re.search(rf'\b{re.escape(filterList)}\b', message.content, re.I):
             author = message.author
-            drone = bot.get_channel(000000000000000) # <insert mod channel ID here>
+            drone = bot.get_channel(0000000000000000) # add channel ID
             embed = discord.Embed(title=f'Message Removed • {author}', color=0xff0000)
             embed.add_field(name="Author", value=f"{message.author.mention}", inline=True)
             embed.add_field(name="Content", value=f"{message.content}", inline=True)
@@ -125,7 +125,29 @@ async def on_message(message):
             embed.timestamp = datetime.datetime.utcnow()
             await drone.send(embed=embed)
             await message.delete()
-            return 
+            return
+
+    if 'Mods' in [role.name for role in message.author.roles] or message.author == message.author.bot: # checks if member has Mods role
+        
+    else:
+        msg_content = message.content.lower()
+
+        everyone = ('@everyone', '@here')
+
+        if any(word in msg_content for word in everyone):
+            user = bot.get_user(message.author.id) or await bot.fetch_user(message.author.id)
+            author = message.author
+            drone_room = bot.get_channel(0000000000000000) # add channel ID
+            embed = discord.Embed(title = f'Unauthorized Ping Removed • {author}', description = '', color = 0xff0000)
+            embed.add_field(name = "Author", value = f'{message.author.mention}', inline = True)
+            embed.add_field(name = "Content", value = f'{message.content}', inline = True)
+            embed.add_field(name = "Location", value = f'{message.channel.mention}', inline = True)
+            embed.set_footer(text=f'ID: {user.id}')
+            embed.timestamp = datetime.datetime.utcnow()
+            await drone_room.send(embed=embed)
+            await message.delete()
+            return
+
 
 @bot.slash_command(name="ping", description="Check if Lunar is online.")
 @commands.cooldown(2, 5, commands.BucketType.user)
