@@ -5,7 +5,7 @@
 > ⚠️ **Developer's Note:** *This version of Lunar is maintained as part of a personal side-project portfolio and exists solely for archival purposes, separate from the actively maintained build. Many features were originally developed prior to Discord's 2021 builds, before native tools (such as AutoMod) were introduced. They remain to reflect Lunar's original design and development context.*
 
 ---
-## ⚙️ Setup
+## Setup
 
 ### 1. Clone the Repo
 
