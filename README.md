@@ -2,19 +2,17 @@
 
 **Lunar** is a Discord bot built with [Pycord](https://docs.pycord.dev), designed to streamline moderation, automate utility tasks, and adapt to evolving server needs.
 
-> ⚠️ **Developer's Note:** *This version of Lunar is maintained as part of a personal side-project portfolio and exists solely for archival purposes, separate from the actively maintained build. Many features were originally developed prior to Discord's 2021 builds, before native tools (such as AutoMod) were introduced. They remain to reflect Lunar's original design and development context.*
-
 ---
 ## Setup
 
-### 1. Clone the Repo
+### Clone the Repo
 
 ```bash
 git clone https://github.com/Ryley4/lunar.git
 cd lunar
 ```
 
-### 2. Install Dependencies
+### Install Dependencies
 
 ```bash
 apt install python3
