@@ -19,12 +19,12 @@ apt install python3
 python3 -m pip install -U py-cord
 ```
 
-### 3. Configuration
+### Configuration
 
 - Add bot token into bot.run("")
 - Remember to update missing IDs with your own.
 
-### 4. Run the Bot
+### Run
 
 ```bash
 python3 main.py
